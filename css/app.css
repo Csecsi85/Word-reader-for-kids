@@ -1,0 +1,53 @@
+body {
+	background-color: rgb(169, 252, 252);
+}
+
+p {
+	margin: 0;
+	padding: 0;
+}
+
+.timer {
+	margin: 10vh auto 5vh auto;
+	text-align: center;
+	font-size: 8rem;
+}
+
+.card-container {
+	text-align: center;
+	width: 30vw;
+	padding: 50px 50px 3vh 50px;
+	margin: 0 auto;
+	background-color: beige;
+	border: 3px solid black;
+	border-radius: 50px;
+}
+
+.card-container-text {
+	font-size: 6rem;
+	padding-bottom: 7vh;
+}
+
+.card-container-buttons {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.activity img {
+	max-width: 4rem;
+	max-height: 4rem;
+}
+
+.btn {
+	padding: 20px;
+	border: 2px solid white;
+	border-radius: 20px;
+	background-color: chocolate;
+}
+
+.card-container-buttons a {
+	text-decoration: none;
+	margin: 0 0 0 30px;
+	color: azure;
+	font-size: 1.2rem;
+}
