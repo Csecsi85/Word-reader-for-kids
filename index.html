@@ -6,6 +6,7 @@
 		<!-- Stylesheets -->
 		<link rel="stylesheet" type="text/css" href="css/app.css" />
 		<!-- Scripts -->
+		<script src="js/cards.js" defer></script>
 		<script src="js/timer.js" defer></script>
 		<title>Pictionary word reader for kids</title>
 	</head>
@@ -19,7 +20,13 @@
 					<div class="btn pause"><p class="play-button">Play</p></div>
 				</a>
 				<a href="#">
-					<div class="next-button btn">Next</div>
+					<div class="btn">
+						<audio id="audio" src="#" preload="metadata"></audio>
+						<p>Listen</p>
+					</div>
+				</a>
+				<a href="#">
+					<div class="btn"><p class="next-button">Next</p></div>
 				</a>
 			</div>
 		</div>
