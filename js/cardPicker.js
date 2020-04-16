@@ -1,4 +1,4 @@
-document.querySelector('#audio').addEventListener('click', cardPicker);
+document.querySelector('#audioBtn').addEventListener('click', cardPicker);
 
 function cardPicker() {
 	let randomNumber = Math.floor(Math.random() * cardData.length);
