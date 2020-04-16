@@ -1,4 +1,4 @@
-# Pictionary word generator for kids
+# Word reader for kids
 
 ## Brief description:
 
@@ -14,7 +14,7 @@ I want to play pictionary with my daughter who is not able to read well yet. So 
 - An array of words
 - Countdown timer
 - An array that links the voice files to a play button
-- An array of possible activity types (preferably photos that describe the activity) (Describe, Draw, Imitate)
+- An array of possible activity types (preferably photos that describe the activity) (Act, describe or draw)
 - A next button to pick a new generated word with an activity
 
 ## Any collaboration collaboration is very much appreciated so I can play this game with my daugthers during the confinement.
