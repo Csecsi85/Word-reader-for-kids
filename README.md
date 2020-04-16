@@ -10,8 +10,9 @@ I want to play pictionary with my daughter who is not able to read well yet. So 
 
 ## What I'm building:
 
-- Simple frontend UI without distractions(Word, play button, picture of activity type)
+- Simple frontend UI without distractions(The word, listen, start clock, next button, picture of activity type)
 - An array of words
+- Countdown timer
 - An array that links the voice files to a play button
 - An array of possible activity types (preferably photos that describe the activity) (Describe, Draw, Imitate)
 - A next button to pick a new generated word with an activity
