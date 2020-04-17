@@ -39,7 +39,9 @@ p {
 }
 
 .btn {
-	padding: 20px;
+	width: 60px;
+	height: 40px;
+	padding: 20px 0 0 0;
 	border: 2px solid white;
 	border-radius: 20px;
 	background-color: chocolate;
@@ -50,4 +52,8 @@ p {
 	margin: 0 0 0 30px;
 	color: azure;
 	font-size: 1.2rem;
+}
+
+.toggle {
+	display: none;
 }

@@ -1,31 +1,32 @@
 let isPaused = true,
 	minutes = 0,
-	seconds = 3,
-	playButton = document.querySelector('.play-button'),
+	seconds = 5,
+	playButton = document.querySelector('.pause'),
 	pauseToggle = () => {
 		if (isPaused === false) {
 			isPaused = true;
-			playButton.innerHTML = 'Play';
+			playButton.innerHTML = '<i class="fa fa-play"></i>';
+			timerDispaly.innerHTML = 'PAUSED';
 		} else {
 			isPaused = false;
-			playButton.innerHTML = 'Pause';
+			playButton.innerHTML = '<i class="fa fa-pause"></i>';
 			timer();
 		}
 	};
+
 let timerDispaly = document.getElementById('timerValue');
 document.querySelector('.pause').addEventListener('click', pauseToggle);
 
 function timeDisplay() {
 	if (seconds <= 0 && minutes == 0) {
 		timerDispaly.innerHTML = 'Time is up!!!';
-		document.querySelector('.pause').style.display = 'none';
+		document.querySelector('.pause').style.visibility = 'hidden';
 	} else if (seconds < 10) {
 		timerDispaly.innerHTML = minutes + ':0' + seconds;
 	} else if (seconds >= 10 || seconds <= 60) {
 		timerDispaly.innerHTML = minutes + ':' + seconds;
 	}
 }
-
 timeDisplay();
 
 function timer() {

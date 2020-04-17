@@ -192,8 +192,8 @@ const cardData = [
 		sound: 'assets/audio/helado.m4a',
 	},
 	{
-		word: 'hielo',
-		sound: 'assets/audio/hielo.m4a',
+		word: 'cielo',
+		sound: 'assets/audio/cielo.m4a',
 	},
 	{
 		word: 'huevo',
@@ -272,10 +272,6 @@ const cardData = [
 		sound: 'assets/audio/patineta.m4a',
 	},
 	{
-		word: 'payaso',
-		sound: 'assets/audio/payaso.m4a',
-	},
-	{
 		word: 'pelota',
 		sound: 'assets/audio/pelota.m4a',
 	},
@@ -338,10 +334,6 @@ const cardData = [
 	{
 		word: 'submarino',
 		sound: 'assets/audio/submarino.m4a',
-	},
-	{
-		word: 'suerte',
-		sound: 'assets/audio/suerte.m4a',
 	},
 	{
 		word: 'tambor',

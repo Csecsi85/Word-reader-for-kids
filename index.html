@@ -5,6 +5,10 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<!-- Stylesheets -->
 		<link rel="stylesheet" type="text/css" href="css/app.css" />
+
+		<!-- Vendor Scripts -->
+		<script src="https://use.fontawesome.com/9b5088e9d6.js" defer></script>
+
 		<!-- Scripts -->
 		<script src="js/cards.js" defer></script>
 		<script src="js/cardPicker.js" defer></script>
@@ -16,20 +20,22 @@
 	<body>
 		<div class="timer"><p id="timerValue"></p></div>
 		<div class="card-container">
-			<div class="card-container-text">apple</div>
+			<div class="card-container-text">error</div>
 			<div class="card-container-buttons">
 				<div class="activity"><img class="img" src="" /></div>
 				<a href="#">
-					<div class="btn pause"><p class="play-button">Play</p></div>
+					<div class="btn pause"><i class="fa fa-play"></i></div>
 				</a>
 				<a href="#">
 					<div id="audioBtn" class="btn">
 						<audio id="audio" src="#" preload="auto"></audio>
-						<p>Listen</p>
+						<i class="fa fa-headphones"></i>
 					</div>
 				</a>
-				<a href=""javascript:history.go(0)"">
-					<div class="btn"><p class="next-button">Next</p></div>
+				<a href="#">
+					<div class="btn btn-reload next-button">
+						<i class="fa fa-arrow-right"></i>
+					</div>
 				</a>
 			</div>
 		</div>
