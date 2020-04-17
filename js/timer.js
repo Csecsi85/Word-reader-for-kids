@@ -1,5 +1,5 @@
 let isPaused = true,
-	minutes = 1,
+	minutes = 0,
 	seconds = 3,
 	playButton = document.querySelector('.play-button'),
 	pauseToggle = () => {
