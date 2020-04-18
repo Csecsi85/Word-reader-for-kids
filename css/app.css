@@ -7,6 +7,16 @@ p {
 	padding: 0;
 }
 
+.modal-container {
+	position: absolute;
+	top: 20px;
+right: 20px;
+	display: block;
+	color: azure;
+	text-align: center;
+	font-size: 20px;
+}
+
 .timer {
 	margin: 10vh auto 5vh auto;
 	text-align: center;

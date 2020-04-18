@@ -1,8 +1,10 @@
-let isPaused = true,
+let
+	isPaused = true,
 	minutes = 0,
 	seconds = 0,
 	randomCard;
-const playButton = document.querySelector('.pause'),
+const
+	playButton = document.querySelector('.pause'),
 	audioButton = document.querySelector('#audioBtn'),
 	reloadButton = document.querySelector('.btn-reload'),
 	cardText = document.querySelector('.card-container-text'),
