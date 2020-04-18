@@ -1,10 +1,8 @@
-let
-	isPaused = true,
+let isPaused = true,
 	minutes = 0,
 	seconds = 0,
 	randomCard;
-const
-	playButton = document.querySelector('.pause'),
+const playButton = document.querySelector('.pause'),
 	audioButton = document.querySelector('#audioBtn'),
 	reloadButton = document.querySelector('.btn-reload'),
 	cardText = document.querySelector('.card-container-text'),
@@ -13,7 +11,8 @@ const
 
 gameInit = (min = 3, sec = 0) => {
 	playButton.innerHTML = '<i class="fa fa-play"></i>';
-	playButton.style.visibility = 'visible';
+	playButton.style.display = 'block';
+	activityImage.style.margin = '0';
 	minutes = min;
 	seconds = sec;
 	isPaused = true;
@@ -39,25 +38,25 @@ pauseToggle = () => {
 
 cardPicker = () => {
 	const randomNumber = Math.floor(Math.random() * cardData.length);
-	randomCard = [cardData[randomNumber].word, cardData[randomNumber].sound];
+	randomCard = [ cardData[randomNumber].word, cardData[randomNumber].sound ];
 	cardText.innerHTML = randomCard[0];
 	document.getElementById('audio').src = randomCard[1];
-}
+};
 
 timeDisplay = () => {
 	if (seconds <= 0 && minutes == 0) {
 		timerDispaly.innerHTML = 'Time is up!!!';
-		playButton.style.visibility = 'hidden';
+		playButton.style.display = 'none';
+		activityImage.style.margin = '0 64px 0 0';
 	} else if (seconds < 10) {
 		timerDispaly.innerHTML = minutes + ':0' + seconds;
 	} else if (seconds >= 10 || seconds <= 60) {
 		timerDispaly.innerHTML = minutes + ':' + seconds;
 	}
-}
+};
 
 timer = () => {
-	let timerFunction = setInterval(function () {
-
+	let timerFunction = setInterval(function() {
 		if (seconds <= 0 && minutes == 0) {
 			clearInterval(timerFunction);
 		} else if (isPaused) {
@@ -71,19 +70,16 @@ timer = () => {
 			timeDisplay();
 		}
 	}, 1000);
-}
-
+};
 
 changeActivityImg = () => {
-	let activitySrc = [
-		'assets/images/body.png',
-		'assets/images/draw.png',
-		'assets/images/speak.png'];
+	let activitySrc = [ 'assets/images/body.png', 'assets/images/draw.png', 'assets/images/speak.png' ];
 	activityImage.src = activitySrc[Math.floor(Math.random() * activitySrc.length)];
 };
 
 playButton.addEventListener('click', pauseToggle);
-reloadButton.addEventListener('click', () => { gameInit(3, 0) });
+reloadButton.addEventListener('click', () => {
+	gameInit(3, 0);
+});
 
-gameInit(0, 5)
-
+gameInit(0, 5);
