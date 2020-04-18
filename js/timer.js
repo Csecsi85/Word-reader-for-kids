@@ -1,37 +1,63 @@
-let isPaused = true,
-	minutes = 3,
+let
+	isPaused = true,
+	minutes = 0,
 	seconds = 0,
+	randomCard;
+const
 	playButton = document.querySelector('.pause'),
-	pauseToggle = () => {
-		if (isPaused === false) {
-			isPaused = true;
-			playButton.innerHTML = '<i class="fa fa-play"></i>';
-			timerDispaly.innerHTML = 'PAUSED';
-		} else {
-			isPaused = false;
-			playButton.innerHTML = '<i class="fa fa-pause"></i>';
-			timer();
-		}
-	};
+	audioButton = document.querySelector('#audioBtn'),
+	reloadButton = document.querySelector('.btn-reload'),
+	cardText = document.querySelector('.card-container-text'),
+	timerDispaly = document.getElementById('timerValue'),
+	activityImage = document.querySelector('.img');
 
-let timerDispaly = document.getElementById('timerValue');
-document.querySelector('.pause').addEventListener('click', pauseToggle);
+gameInit = (min = 3, sec = 0) => {
+	playButton.innerHTML = '<i class="fa fa-play"></i>';
+	playButton.style.visibility = 'visible';
+	minutes = min;
+	seconds = sec;
+	isPaused = true;
+	timeDisplay();
+	changeActivityImg();
+	audioButton.addEventListener('click', () => {
+		new Audio(randomCard[1]).play();
+	});
+	cardPicker();
+};
 
-function timeDisplay() {
+pauseToggle = () => {
+	if (isPaused === false) {
+		isPaused = true;
+		playButton.innerHTML = '<i class="fa fa-play"></i>';
+		timerDispaly.innerHTML = 'PAUSED';
+	} else {
+		isPaused = false;
+		playButton.innerHTML = '<i class="fa fa-pause"></i>';
+		timer();
+	}
+};
+
+cardPicker = () => {
+	const randomNumber = Math.floor(Math.random() * cardData.length);
+	randomCard = [cardData[randomNumber].word, cardData[randomNumber].sound];
+	cardText.innerHTML = randomCard[0];
+	document.getElementById('audio').src = randomCard[1];
+}
+
+timeDisplay = () => {
 	if (seconds <= 0 && minutes == 0) {
 		timerDispaly.innerHTML = 'Time is up!!!';
-		document.querySelector('.pause').style.visibility = 'hidden';
+		playButton.style.visibility = 'hidden';
 	} else if (seconds < 10) {
 		timerDispaly.innerHTML = minutes + ':0' + seconds;
 	} else if (seconds >= 10 || seconds <= 60) {
 		timerDispaly.innerHTML = minutes + ':' + seconds;
 	}
 }
-timeDisplay();
 
-function timer() {
+timer = () => {
 	let timerFunction = setInterval(function () {
-		/* Reducing minutes and seconds */
+
 		if (seconds <= 0 && minutes == 0) {
 			clearInterval(timerFunction);
 		} else if (isPaused) {
@@ -46,3 +72,18 @@ function timer() {
 		}
 	}, 1000);
 }
+
+
+changeActivityImg = () => {
+	let activitySrc = [
+		'assets/images/body.png',
+		'assets/images/draw.png',
+		'assets/images/speak.png'];
+	activityImage.src = activitySrc[Math.floor(Math.random() * activitySrc.length)];
+};
+
+playButton.addEventListener('click', pauseToggle);
+reloadButton.addEventListener('click', () => { gameInit(3, 0) });
+
+gameInit(0, 5)
+
