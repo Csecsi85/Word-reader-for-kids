@@ -4,6 +4,10 @@ body {
 	margin: 0;
 }
 
+h2 {
+	margin: 0;
+}
+
 p {
 	margin: 0;
 	padding: 0;
@@ -20,44 +24,80 @@ p {
 	z-index: 2;
 }
 
-
-
 .modal-container {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  -webkit-animation-name: fadeIn; /* Fade in the background */
-  -webkit-animation-duration: 0.4s;
-  animation-name: fadeIn;
-  animation-duration: 0.4s
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0, 0, 0, 0.4);
+	animation-name: fadeIn;
+	animation-duration: 0.6s;
 }
 
 @keyframes fadeIn {
-  from {opacity: 0} 
-  to {opacity: 1}
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
 }
 
 @keyframes slideIn {
-  from {bottom: -300px; opacity: 0}
-  to {bottom: 0; opacity: 1}
+	from {
+		bottom: -300px;
+		opacity: 0;
+	}
+	to {
+		bottom: 0;
+		opacity: 1;
+	}
 }
 .modal-box {
-  position: fixed;
-  bottom: 0;
-  background-color: #fefefe;
-  width: 100%;
-  -webkit-animation-name: slideIn;
-  -webkit-animation-duration: 0.4s;
-  animation-name: slideIn;
-	animation-duration: 0.4s;
+	position: fixed;
+	bottom: 0;
+	background-color: #fefefe;
+	width: 100%;
+	animation-name: slideIn;
+	animation-duration: 0.8s;
 	text-align: center;
+}
+
+.modal-box-header {
+	margin: 0;
+	padding: 15px 0;
+	background-color: chocolate;
+	color: azure;
+}
+
+.modal-box-form {
+	display: flex;
+	justify-content: center;
+	background-color: rgb(169, 252, 252);
+}
+
+.modal-box-form div {
+	padding: 10px 10px;
+}
+
+.modal-box-form-timer {
+	display: inline-block;
+}
+
+.modal-box-form-flags {
+	padding: 0;
+}
+.modal-box-form-flags div {
+	display: flex;
+	justify-content: center;
+}
+
+.flags {
+	width: 32px;
 }
 
 .timer {
@@ -107,7 +147,34 @@ p {
 	font-size: 1.2rem;
 }
 
+.set {
+	margin: auto;
+	color: azure;
+	font-size: 1.6rem;
+	text-align: center;
+}
+
+.text-decoration {
+	text-decoration: none;
+	margin: 60px 0 0 25px;
+}
+.text-decoration div {
+	padding-bottom: 0px;
+}
+
 .modal {
 	display: block;
 	z-index: 1;
+}
+
+#time {
+	width: 70px;
+	display: block;
+	margin-bottom: 5px;
+}
+
+#spain,
+#uk {
+	display: table-cell;
+	vertical-align: middle;
 }

@@ -1,58 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
 
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<!-- Stylesheets -->
-		<link rel="stylesheet" type="text/css" href="css/app.css" />
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<!-- Stylesheets -->
+	<link rel="stylesheet" type="text/css" href="css/app.css" />
 
-		<!-- Vendor Scripts -->
-		<script src="https://use.fontawesome.com/9b5088e9d6.js" defer></script>
+	<!-- Vendor Scripts -->
+	<script src="https://use.fontawesome.com/9b5088e9d6.js" defer></script>
 
-		<!-- Scripts -->
-		<script src="js/cards.js" defer></script>
-		<script src="js/timer.js" defer></script>
-		<script src="js/modal.js" defer></script>
+	<!-- Scripts -->
+	<script src="js/cards.js" defer></script>
+	<script src="js/timer.js" defer></script>
+	<script src="js/modal.js" defer></script>
 
 
-		<title>Pictionary word reader for kids</title>
-	</head>
+	<title>Pictionary word reader for kids</title>
+</head>
 
-	<body>
-		<a href="#" class="modal-button btn">
-			<i class="fa fa-cog"></i>
-		</a>
-		<div class="modal-container">
-			<div class="modal-box">
-				<div class="modal-header">
-					<h1 class="modal-box-header">Settings</h1>
+<body>
+	<a href="#" class="modal-button btn"><i class="fa fa-cog"></i></a>
+	<div class="modal-container">
+		<div class="modal-box">
+			<div class="modal-header">
+				<h1 class="modal-box-header">Settings</h1>
+			</div>
+			<div class="modal-box-body">
+				<form class="modal-box-form">
+					<div class="modal-box-form-timer">
+						<div>
+							<label for="time">
+								<h2>Set Timer</h2>
+							</label>
+						</div>
+						<div>
+							<div>
+								<input type="number" id="time" placeholder="Minutes" min="0" max="10">
+								<input type="number" id="time" placeholder="Seconds" min="0" max="59">
+							</div>
+						</div>
+					</div>
+					
+					<div>
+						<div>
+							<label for="flags"><h2>Choose a flag</h2></label>
+						</div>	
+						<div class="modal-box-form-flags">
+							<div>
+								<label for="spain"><img class="flags" src="assets/images/flag-spain.png" alt="flag-spain"></label>
+								<input type="radio" id="spain" name="flags" value="spain" checked>
+							</div>
+							<div>
+								<label for="uk"><img class="flags" src="assets/images/flag-uk.png" alt="flag-uk"></label>
+								<input type="radio" id="uk" name="flags" value="uk">
+							</div>
+						</div>
+					</div>
+
+					<div class="modal-box-form-text">
+						<div for="show-text">
+							<h2>Show text?</h2>
+						</div>
+						<div>
+							<label for="show-text">Do you want text <br> to be shown on cards?</label>
+						</div>
+						<div>
+							<input type="checkbox" id="show-text" name="show-text" value="show-text" checked>
+						</div>
+					</div>
+					<a href="#" class="text-decoration">
+						<div class="btn "><p class="set">Set</p></div>
+					</a>
+			</div>
+			</form>
+
+		</div>
+	</div>
+	</div>
+	<div class="timer">
+		<p id="timerValue"></p>
+	</div>
+	<div class="card-container">
+		<div class="card-container-text"></div>
+		<div class="card-container-buttons">
+			<div class="activity"><img class="img" src="" /></div>
+			<a href="#">
+				<div class="btn pause"><i class="fa fa-play"></i></div>
+			</a>
+			<a href="#">
+				<div id="audioBtn" class="btn">
+					<audio id="audio" src="#" preload="auto"></audio>
+					<i class="fa fa-headphones"></i>
 				</div>
-			</div>
+			</a>
+			<a href="#">
+				<div class="btn btn-reload next-button">
+					<i class="fa fa-arrow-right"></i>
+				</div>
+			</a>
 		</div>
-		<div class="timer">
-			<p id="timerValue"></p>
-		</div>
-		<div class="card-container">
-			<div class="card-container-text"></div>
-			<div class="card-container-buttons">
-				<div class="activity"><img class="img" src="" /></div>
-				<a href="#">
-					<div class="btn pause"><i class="fa fa-play"></i></div>
-				</a>
-				<a href="#">
-					<div id="audioBtn" class="btn">
-						<audio id="audio" src="#" preload="auto"></audio>
-						<i class="fa fa-headphones"></i>
-					</div>
-				</a>
-				<a href="#">
-					<div class="btn btn-reload next-button">
-						<i class="fa fa-arrow-right"></i>
-					</div>
-				</a>
-			</div>
-		</div>
-	</body>
+	</div>
+</body>
 
 </html>

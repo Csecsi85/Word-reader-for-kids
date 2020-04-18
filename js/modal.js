@@ -1,10 +1,9 @@
 let modalButton = document.querySelector('.modal-button');
 
 modalButton.addEventListener('click', () => {
-  modalToggle()
+	modalToggle();
 });
 
 function modalToggle() {
-  document.querySelector('.modal-container').classList.toggle('modal');
-
-};
+	document.querySelector('.modal-container').classList.toggle('modal');
+}
