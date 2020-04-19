@@ -6,7 +6,7 @@ A simple card generator from an array of words that plays an audio file correspo
 
 ## Reason of doing this:
 
-I want to play Activity Board gamekk with my daughter who is not able to read well yet. So I had to read the words for her every time, but then I can't play in the game because I know the answer.
+I want to play Activity Board game with my daughter who is not able to read well yet. So I had to read the words for her every time, but then I can't play in the game because I know the answer.
 
 ## What I'm building:
 
