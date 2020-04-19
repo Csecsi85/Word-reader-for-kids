@@ -10,7 +10,8 @@ const playButton = document.querySelector('.pause'),
 	reloadButton = document.querySelector('.btn-reload'),
 	cardText = document.querySelector('.card-container-text'),
 	timerDispaly = document.getElementById('timerValue'),
-	activityImage = document.querySelector('.img');
+	activityImage = document.querySelector('.img'),
+	modalButton = document.querySelector('.modal-button');
 
 /* Get user Input from the settings modal */
 const userInput = () => {
@@ -103,10 +104,17 @@ changeActivityImg = () => {
 };
 
 /* Event Listeners to buttons on click */
+modalButton.addEventListener('click', () => {
+	modalToggle();
+});
 playButton.addEventListener('click', pauseToggle);
 reloadButton.addEventListener('click', () => {
 	gameInit(userInput().time.minutes, userInput().time.seconds);
 });
+/* Toggles the modal container on cog button click */
+function modalToggle() {
+	document.querySelector('.modal-container').classList.toggle('modal');
+}
 
 /* Start the webapp gameInit(minutes, seconds) */
 /* todo make it user adjustable */
