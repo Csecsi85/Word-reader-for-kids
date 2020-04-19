@@ -1,7 +1,10 @@
+/* Declare all global variables */
 let isPaused = true,
 	minutes = 0,
 	seconds = 0,
 	randomCard;
+
+/* Target different parts of the page */
 const playButton = document.querySelector('.pause'),
 	audioButton = document.querySelector('#audioBtn'),
 	reloadButton = document.querySelector('.btn-reload'),
@@ -9,6 +12,23 @@ const playButton = document.querySelector('.pause'),
 	timerDispaly = document.getElementById('timerValue'),
 	activityImage = document.querySelector('.img');
 
+/* Get user Input from the settings page */
+const userInput = () => {
+	userSettings = {
+		time     : {
+			/* Values : string with a number */
+			minutes : parseInt(document.getElementById('minutes').value),
+			seconds : parseInt(document.getElementById('seconds').value)
+		},
+		/* Values : es, en */
+		language : document.querySelector('input[name="flags"]:checked').value,
+		/* Values : True, False */
+		showText : document.getElementById('show-text').checked
+	};
+	return userSettings;
+};
+
+/* Initialisation */
 gameInit = (min = 3, sec = 0) => {
 	playButton.innerHTML = '<i class="fa fa-play"></i>';
 	playButton.style.display = 'block';
@@ -24,6 +44,7 @@ gameInit = (min = 3, sec = 0) => {
 	cardPicker();
 };
 
+/* Alternate between button states Play/Pause */
 pauseToggle = () => {
 	if (isPaused === false) {
 		isPaused = true;
@@ -36,6 +57,7 @@ pauseToggle = () => {
 	}
 };
 
+/* Pick a random card from js/cards.js array */
 cardPicker = () => {
 	const randomNumber = Math.floor(Math.random() * cardData.length);
 	randomCard = [ cardData[randomNumber].word, cardData[randomNumber].sound ];
@@ -43,6 +65,7 @@ cardPicker = () => {
 	document.getElementById('audio').src = randomCard[1];
 };
 
+/* Displays time and hides button when time is up */
 timeDisplay = () => {
 	if (seconds <= 0 && minutes == 0) {
 		timerDispaly.innerHTML = 'Time is up!!!';
@@ -55,6 +78,7 @@ timeDisplay = () => {
 	}
 };
 
+/* Countdown timer function */
 timer = () => {
 	let timerFunction = setInterval(function() {
 		if (seconds <= 0 && minutes == 0) {
@@ -72,14 +96,18 @@ timer = () => {
 	}, 1000);
 };
 
+/* Changing activity image */
 changeActivityImg = () => {
 	let activitySrc = [ 'assets/images/body.png', 'assets/images/draw.png', 'assets/images/speak.png' ];
 	activityImage.src = activitySrc[Math.floor(Math.random() * activitySrc.length)];
 };
 
+/* Event Listeners to buttons on click */
 playButton.addEventListener('click', pauseToggle);
 reloadButton.addEventListener('click', () => {
-	gameInit(3, 0);
+	gameInit(userInput().time.minutes, userInput().time.seconds);
 });
 
-gameInit(3, 0);
+/* Start the webapp gameInit(minutes, seconds) */
+/* todo make it user adjustable */
+gameInit(userInput().time.minutes, userInput().time.seconds);

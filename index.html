@@ -15,10 +15,11 @@
 	<script src="js/timer.js" defer></script>
 	<script src="js/modal.js" defer></script>
 
-
+	<!-- Browser tab title -->
 	<title>Pictionary word reader for kids</title>
 </head>
 
+<!--fix The big mess to clean up -->
 <body>
 	<a href="#" class="modal-button btn"><i class="fa fa-cog"></i></a>
 	<div class="modal-container">
@@ -35,9 +36,21 @@
 							</label>
 						</div>
 						<div>
-							<div>
-								<input type="number" id="time" placeholder="Minutes" min="0" max="10">
-								<input type="number" id="time" placeholder="Seconds" min="0" max="59">
+							<div class="sliders">
+								<div>
+									<div class="sliders-time">
+										<label for="minutes">Minutes:</label>
+										<output name="ageOutputName" id="ageOutputId1">3</output>
+									</div>
+										<input type="range" id="minutes" placeholder="Min" min="0" max="10" value="3" step="1" oninput="ageOutputId1.value = minutes.value"">
+									</div>
+								<div>
+									<div class="sliders-time">
+										<label for="minutes">Seconds:</label>
+										<output name="ageOutputName" id="ageOutputId2">0</output>
+								</div>
+									<input type="range" id="seconds" placeholder="Sec" min="0" max="59" value="0" step="1" oninput="ageOutputId2.value = seconds.value"">
+								</div>
 							</div>
 						</div>
 					</div>
@@ -47,13 +60,13 @@
 							<label for="flags"><h2>Choose a flag</h2></label>
 						</div>	
 						<div class="modal-box-form-flags">
-							<div>
+							<div id="language">
 								<label for="spain"><img class="flags" src="assets/images/flag-spain.png" alt="flag-spain"></label>
-								<input type="radio" id="spain" name="flags" value="spain" checked>
+								<input type="radio" id="spain" name="flags" value="es" checked>
 							</div>
 							<div>
 								<label for="uk"><img class="flags" src="assets/images/flag-uk.png" alt="flag-uk"></label>
-								<input type="radio" id="uk" name="flags" value="uk">
+								<input type="radio" id="uk" name="flags" value="en">
 							</div>
 						</div>
 					</div>
@@ -69,9 +82,9 @@
 							<input type="checkbox" id="show-text" name="show-text" value="show-text" checked>
 						</div>
 					</div>
-					<a href="#" class="text-decoration">
-						<div class="btn "><p class="set">Set</p></div>
-					</a>
+
+						<button type="submit" onclick="gameInit(userInput().time.minutes, userInput().time.seconds)"></button>
+
 			</div>
 			</form>
 
