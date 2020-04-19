@@ -11,8 +11,8 @@ const cardData = [
 	{
 		word  : 'araña',
 		sound : 'assets/audio/arana.m4a'
-	},
-	{
+	}
+	/* {
 		word  : 'árbol de Navidad',
 		sound : 'assets/audio/arbol-de-navidad.m4a'
 	},
@@ -383,5 +383,5 @@ const cardData = [
 	{
 		word  : 'zapato',
 		sound : 'assets/audio/zapato.m4a'
-	}
+	} */
 ];
