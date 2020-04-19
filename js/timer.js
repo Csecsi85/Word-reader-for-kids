@@ -105,9 +105,9 @@ changeActivityImg = () => {
 /* Event Listeners to buttons on click */
 playButton.addEventListener('click', pauseToggle);
 reloadButton.addEventListener('click', () => {
-	gameInit(3, 0);
+	gameInit(userInput().time.minutes, userInput().time.seconds);
 });
 
 /* Start the webapp gameInit(minutes, seconds) */
 /* todo make it user adjustable */
-gameInit(3, 0);
+gameInit(userInput().time.minutes, userInput().time.seconds);

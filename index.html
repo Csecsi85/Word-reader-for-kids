@@ -36,11 +36,21 @@
 							</label>
 						</div>
 						<div>
-							<div>
-								<label for="minutes">Minutes</label>
-								<input type="number" id="minutes" placeholder="Min" min="0" max="10" value="3" step="1">
-								<label for="minutes">Seconds</label>
-								<input type="number" id="seconds" placeholder="Sec" min="0" max="59" value="0" step="1">
+							<div class="sliders">
+								<div>
+									<div class="sliders-time">
+										<label for="minutes">Minutes:</label>
+										<output name="ageOutputName" id="ageOutputId1">3</output>
+									</div>
+										<input type="range" id="minutes" placeholder="Min" min="0" max="10" value="3" step="1" oninput="ageOutputId1.value = minutes.value"">
+									</div>
+								<div>
+									<div class="sliders-time">
+										<label for="minutes">Seconds:</label>
+										<output name="ageOutputName" id="ageOutputId2">0</output>
+								</div>
+									<input type="range" id="seconds" placeholder="Sec" min="0" max="59" value="0" step="1" oninput="ageOutputId2.value = seconds.value"">
+								</div>
 							</div>
 						</div>
 					</div>
@@ -72,9 +82,9 @@
 							<input type="checkbox" id="show-text" name="show-text" value="show-text" checked>
 						</div>
 					</div>
-					<a href="#" class="text-decoration">
-						<div class="btn "><p class="set" onclick="userInput()">Set</p></div>
-					</a>
+
+						<button type="submit" onclick="gameInit(userInput().time.minutes, userInput().time.seconds)"></button>
+
 			</div>
 			</form>
 
