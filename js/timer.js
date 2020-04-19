@@ -82,4 +82,4 @@ reloadButton.addEventListener('click', () => {
 	gameInit(3, 0);
 });
 
-gameInit(0, 5);
+gameInit(3, 0);
