@@ -15,10 +15,11 @@
 	<script src="js/timer.js" defer></script>
 	<script src="js/modal.js" defer></script>
 
-
+	<!-- Browser tab title -->
 	<title>Pictionary word reader for kids</title>
 </head>
 
+<!--fix The big mess to clean up -->
 <body>
 	<a href="#" class="modal-button btn"><i class="fa fa-cog"></i></a>
 	<div class="modal-container">
@@ -36,8 +37,10 @@
 						</div>
 						<div>
 							<div>
-								<input type="number" id="time" placeholder="Minutes" min="0" max="10">
-								<input type="number" id="time" placeholder="Seconds" min="0" max="59">
+								<label for="minutes">Minutes</label>
+								<input type="number" id="minutes" placeholder="Min" min="0" max="10" value="3" step="1">
+								<label for="minutes">Seconds</label>
+								<input type="number" id="seconds" placeholder="Sec" min="0" max="59" value="0" step="1">
 							</div>
 						</div>
 					</div>
@@ -47,13 +50,13 @@
 							<label for="flags"><h2>Choose a flag</h2></label>
 						</div>	
 						<div class="modal-box-form-flags">
-							<div>
+							<div id="language">
 								<label for="spain"><img class="flags" src="assets/images/flag-spain.png" alt="flag-spain"></label>
-								<input type="radio" id="spain" name="flags" value="spain" checked>
+								<input type="radio" id="spain" name="flags" value="es" checked>
 							</div>
 							<div>
 								<label for="uk"><img class="flags" src="assets/images/flag-uk.png" alt="flag-uk"></label>
-								<input type="radio" id="uk" name="flags" value="uk">
+								<input type="radio" id="uk" name="flags" value="en">
 							</div>
 						</div>
 					</div>
@@ -70,7 +73,7 @@
 						</div>
 					</div>
 					<a href="#" class="text-decoration">
-						<div class="btn "><p class="set">Set</p></div>
+						<div class="btn "><p class="set" onclick="userInput()">Set</p></div>
 					</a>
 			</div>
 			</form>

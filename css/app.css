@@ -1,3 +1,4 @@
+/* General tags */
 body {
 	background-color: rgb(169, 252, 252);
 	padding: 0;
@@ -13,6 +14,7 @@ p {
 	padding: 0;
 }
 
+/* fix Big mess to clean up */
 .modal-button {
 	position: absolute;
 	top: 20px;
