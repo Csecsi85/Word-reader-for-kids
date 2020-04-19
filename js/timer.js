@@ -12,7 +12,7 @@ const playButton = document.querySelector('.pause'),
 	timerDispaly = document.getElementById('timerValue'),
 	activityImage = document.querySelector('.img');
 
-/* Get user Input from the settings page */
+/* Get user Input from the settings modal */
 const userInput = () => {
 	userSettings = {
 		time     : {
