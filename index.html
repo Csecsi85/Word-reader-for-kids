@@ -21,7 +21,7 @@
 <!--fix The big mess to clean up -->
 <body>
 	<a href="#" class="modal-button btn"><i class="fa fa-cog"></i></a>
-	<div class="modal-container">
+	<div class="modal-container" id="modal">
 		<div class="modal-box">
 			<div class="modal-header">
 				<h1 class="modal-box-header">Ajustes</h1>
@@ -82,7 +82,7 @@
 						</div>
 					</div>
 
-						<div class="button" onclick="gameInit(userInput().time.minutes, userInput().time.seconds)">Aplicar</div>
+						<div class="button" id="apply-button" onclick="gameInit(userInput().time.minutes, userInput().time.seconds)">Aplicar</div>
 
 			</div>
 			</form>
