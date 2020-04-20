@@ -199,18 +199,15 @@ p {
 	justify-content: space-evenly;
 }
 
-button {
-	height: 70px;
+.button {
+	height: 50px;
 	width: 70px;
 	background-color: chocolate;
 	border: 2px solid white;
 	border-radius: 20px;
 	color: azure;
-	font-size: 1.3rem;
+	font-size: 1.5rem;
+	padding-top: 20px;
 	margin: 45px 0 0 25px;
 	cursor: pointer;
-}
-
-button:focus {
-	outline: none;
 }
