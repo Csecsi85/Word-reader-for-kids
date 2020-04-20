@@ -11,8 +11,10 @@
 	<script src="https://use.fontawesome.com/9b5088e9d6.js" defer></script>
 
 	<!-- Scripts -->
+	<script src="js/translate.js" defer></script>
 	<script src="js/cards.js" defer></script>
 	<script src="js/app.js" defer></script>
+	
 
 	<!-- Browser tab title -->
 	<title>Activity para niños</title>
@@ -31,24 +33,24 @@
 					<div class="modal-box-form-timer">
 						<div>
 							<label for="time">
-								<h2>Temporizador</h2>
+								<h2 class="set-timer">Temporizador</h2>
 							</label>
 						</div>
 						<div>
 							<div class="sliders">
 								<div>
 									<div class="sliders-time">
-										<label for="minutes">Minutos:</label>
+										<label class="sliders-time-minutes" for="minutes">Minutos:</label>
 										<output name="ageOutputName" id="ageOutputId1">3</output>
 									</div>
-										<input type="range" id="minutes" placeholder="Min" min="0" max="10" value="3" step="1" oninput="ageOutputId1.value = minutes.value"">
+										<input type="range" id="minutes" placeholder="Min" min="0" max="10" value="3" step="1" oninput="ageOutputId1.value = minutes.value">
 									</div>
 								<div>
 									<div class="sliders-time">
-										<label for="minutes">Segundos:</label>
+										<label class="sliders-time-seconds" for="minutes">Segundos:</label>
 										<output name="ageOutputName" id="ageOutputId2">0</output>
 								</div>
-									<input type="range" id="seconds" placeholder="Sec" min="0" max="59" value="0" step="1" oninput="ageOutputId2.value = seconds.value"">
+									<input type="range" id="seconds" placeholder="Sec" min="0" max="59" value="0" step="1" oninput="ageOutputId2.value = seconds.value">
 								</div>
 							</div>
 						</div>
@@ -56,7 +58,7 @@
 					
 					<div>
 						<div>
-							<label for="flags"><h2>Elige idioma</h2></label>
+							<label for="flags"><h2 class="flags-title">Elige idioma</h2></label>
 						</div>	
 						<div class="modal-box-form-flags">
 							<div id="language">
@@ -72,10 +74,10 @@
 
 					<div class="modal-box-form-text">
 						<div for="show-text">
-							<h2>Mostrar texto?</h2>
+							<h2 class="card-text-title">Mostrar texto?</h2>
 						</div>
 						<div>
-							<label for="show-text">Qieres ver el texto <br> en la cajilla?</label>
+							<label class="card-text-description" for="show-text">Qieres ver el texto <br> en la cajilla?</label>
 						</div>
 						<div>
 							<input type="checkbox" id="show-text" name="show-text" value="show-text" checked>
