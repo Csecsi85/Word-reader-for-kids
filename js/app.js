@@ -72,7 +72,12 @@ pauseToggle = () => {
 cardPicker = () => {
 	const randomNumber = Math.floor(Math.random() * cardTracker.length);
 	randomCard = [ cardTracker[randomNumber].word, cardTracker[randomNumber].sound ];
-	cardText.innerHTML = randomCard[0];
+	if (userInput().showText) {
+		cardText.innerHTML = randomCard[0];
+	} else {
+		cardText.innerHTML = '';
+	}
+
 	document.getElementById('audio').src = randomCard[1];
 	cardTracker.splice(randomNumber, 1);
 };
