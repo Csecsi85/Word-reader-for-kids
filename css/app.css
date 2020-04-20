@@ -26,6 +26,9 @@ p {
 	z-index: 2;
 }
 
+/* bug You can make words to get highlighted
+ if you write them in a comment and you have a 
+ new tab with all the things you have to do. */
 .modal-container {
 	display: none;
 	position: fixed;
@@ -210,4 +213,20 @@ p {
 	padding-top: 20px;
 	margin: 45px 0 0 25px;
 	cursor: pointer;
+}
+
+#minutes:hover {
+	cursor: grab;
+}
+
+#minutes:active {
+	cursor: grabbing;
+}
+
+#seconds:hover {
+	cursor: grab;
+}
+
+#seconds:active {
+	cursor: grabbing;
 }
