@@ -27,6 +27,7 @@ const playButton = document.querySelector('.pause'),
 ////////////////////////////////////////////
 /* Get user Input from the settings modal */
 ////////////////////////////////////////////
+
 const userInput = () => {
 	userSettings = {
 		time     : {
@@ -66,6 +67,7 @@ gameInit = (min = 3, sec = 0) => {
 		cardTracker = JSON.parse(JSON.stringify(cardData));
 		gameInit(userInput().time.minutes, userInput().time.seconds);
 	}
+	translate(languageHandler(userInput().language));
 };
 
 ///////////////
@@ -130,6 +132,15 @@ timer = () => {
 	}, 1000);
 };
 
+/* Toggles the modal icon */
+modalIconToggler = () => {
+	if (document.querySelector('.modal-button').innerHTML == '<i class="fa fa-cog"></i>') {
+		document.querySelector('.modal-button').innerHTML = '<i class="fa fa-times"></i>';
+	} else {
+		document.querySelector('.modal-button').innerHTML = '<i class="fa fa-cog"></i>';
+	}
+};
+
 /* Changing activity image */
 changeActivityImg = () => {
 	let activitySrc = [ 'assets/images/body.png', 'assets/images/draw.png', 'assets/images/speak.png' ];
@@ -140,12 +151,14 @@ changeActivityImg = () => {
 window.onclick = function(event) {
 	if (event.target == modalBox) {
 		document.querySelector('.modal-container').classList.toggle('modal');
+		modalIconToggler();
 	}
 };
 /* Toggles modal when ESC key is pressed*/
 window.onkeyup = function(event) {
 	if (event.keyCode == 27) {
 		document.querySelector('.modal-container').classList.toggle('modal');
+		modalIconToggler();
 	}
 };
 
@@ -156,14 +169,11 @@ window.onkeyup = function(event) {
 /* Toggles between cog wheel and X when settings button pressed */
 modalButton.addEventListener('click', () => {
 	modalToggle();
-	if (document.querySelector('.modal-button').innerHTML == '<i class="fa fa-cog"></i>') {
-		document.querySelector('.modal-button').innerHTML = '<i class="fa fa-times"></i>';
-	} else {
-		document.querySelector('.modal-button').innerHTML = '<i class="fa fa-cog"></i>';
-	}
+	modalIconToggler();
 });
 applyButton.addEventListener('click', () => {
 	modalToggle();
+	modalIconToggler();
 });
 playButton.addEventListener('click', pauseToggle);
 reloadButton.addEventListener('click', () => {
