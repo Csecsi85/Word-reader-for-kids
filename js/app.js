@@ -1,4 +1,7 @@
+//////////////////////////////////
 /* Declare all global variables */
+//////////////////////////////////
+
 let isPaused = true,
 	minutes = 0,
 	seconds = 0,
@@ -7,20 +10,27 @@ let isPaused = true,
 	 so if there is no cards left in the clone you can clone it again */
 	cardTracker = JSON.parse(JSON.stringify(cardData));
 
+////////////////////////////////////////
 /* Target different parts of the page */
+////////////////////////////////////////
+
 const playButton = document.querySelector('.pause'),
 	audioButton = document.querySelector('#audioBtn'),
 	reloadButton = document.querySelector('.btn-reload'),
 	cardText = document.querySelector('.card-container-text'),
 	timerDispaly = document.getElementById('timerValue'),
 	activityImage = document.querySelector('.img'),
-	modalButton = document.querySelector('.modal-button');
+	modalButton = document.querySelector('.modal-button'),
+	modalBox = document.getElementById('modal'),
+	applyButton = document.getElementById('apply-button');
 
+////////////////////////////////////////////
 /* Get user Input from the settings modal */
+////////////////////////////////////////////
 const userInput = () => {
 	userSettings = {
 		time     : {
-			/* Values : string with a number */
+			/* Values : number */
 			minutes : parseInt(document.getElementById('minutes').value),
 			seconds : parseInt(document.getElementById('seconds').value)
 		},
@@ -32,7 +42,10 @@ const userInput = () => {
 	return userSettings;
 };
 
+////////////////////
 /* Initialisation */
+////////////////////
+
 gameInit = (min = 3, sec = 0) => {
 	/* If there are cards in the cardTracker array */
 	if (cardTracker.length > 0) {
@@ -54,6 +67,10 @@ gameInit = (min = 3, sec = 0) => {
 		gameInit(userInput().time.minutes, userInput().time.seconds);
 	}
 };
+
+///////////////
+/* Functions */
+///////////////
 
 /* Alternate between button states Play/Pause */
 pauseToggle = () => {
@@ -119,8 +136,33 @@ changeActivityImg = () => {
 	activityImage.src = activitySrc[Math.floor(Math.random() * activitySrc.length)];
 };
 
+/* Closes modal when user clicks anywhere outside of the modal */
+window.onclick = function(event) {
+	if (event.target == modalBox) {
+		document.querySelector('.modal-container').classList.toggle('modal');
+	}
+};
+/* Toggles modal when ESC key is pressed*/
+window.onkeyup = function(event) {
+	if (event.keyCode == 27) {
+		document.querySelector('.modal-container').classList.toggle('modal');
+	}
+};
+
+/////////////////////////////////////////
 /* Event Listeners to buttons on click */
+/////////////////////////////////////////
+
+/* Toggles between cog wheel and X when settings button pressed */
 modalButton.addEventListener('click', () => {
+	modalToggle();
+	if (document.querySelector('.modal-button').innerHTML == '<i class="fa fa-cog"></i>') {
+		document.querySelector('.modal-button').innerHTML = '<i class="fa fa-times"></i>';
+	} else {
+		document.querySelector('.modal-button').innerHTML = '<i class="fa fa-cog"></i>';
+	}
+});
+applyButton.addEventListener('click', () => {
 	modalToggle();
 });
 playButton.addEventListener('click', pauseToggle);
@@ -132,6 +174,7 @@ function modalToggle() {
 	document.querySelector('.modal-container').classList.toggle('modal');
 }
 
+/////////////////////////////////////////////////
 /* Start the webapp gameInit(minutes, seconds) */
-/* todo make it user adjustable */
+/////////////////////////////////////////////////
 gameInit(userInput().time.minutes, userInput().time.seconds);
