@@ -93,6 +93,11 @@ cardPicker = () => {
 	randomCard = [ cardTracker[randomNumber].word, cardTracker[randomNumber].sound ];
 	if (userInput().showText) {
 		cardText.innerHTML = randomCard[0];
+		if (randomCard[0].length > 12) {
+			cardText.style.fontSize = '5rem';
+		} else {
+			cardText.style.fontSize = '6rem';
+		}
 	} else {
 		cardText.innerHTML = '';
 	}
