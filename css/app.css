@@ -230,3 +230,51 @@ p {
 #seconds:active {
 	cursor: grabbing;
 }
+
+#create-player-button {
+	cursor: pointer;
+}
+
+.players-container {
+	position: absolute;
+	top: 20%;
+	left: 5%;
+	text-align: center;
+	background-color: beige;
+	padding: 50px 30px;
+	border: 3px solid black;
+	border-radius: 30px;
+}
+
+#players-title {
+	font-size: 5rem;
+}
+
+#players {
+	margin: 50px 0 30px 0;
+	text-align: left;
+}
+
+#create-player-button {
+	margin: auto;
+	padding: 20px 0 0 0;
+}
+
+#player-name-input {
+	margin-bottom: 30px;
+	padding: 5px;
+	font-size: 1.6rem;
+	width: 200px;
+	border-radius: 15px;
+	border: 2px solid chocolate;
+	outline: none;
+}
+
+.player-list-item {
+	list-style: none;
+	font-size: 2rem;
+}
+
+ul {
+	padding-inline-start: 0;
+}

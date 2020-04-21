@@ -14,7 +14,7 @@
 	<script src="js/translate.js" defer></script>
 	<script src="js/cards.js" defer></script>
 	<script src="js/app.js" defer></script>
-	
+	<script src="js/players.js" defer></script>
 
 	<!-- Browser tab title -->
 	<title>Activity para niños</title>
@@ -92,6 +92,16 @@
 		</div>
 	</div>
 	</div>
+
+	<div class="players-container">
+		<h2 id="players-title">Players</h2>
+		<ul id="players"></ul>
+		<form id="players-form">
+			<input type="text" id="player-name-input" placeholder="Enter your name">
+			<div class="button" type="submit" id="create-player-button">Create</div>
+		</form>
+	</div>
+
 	<div class="timer">
 		<p id="timerValue"></p>
 	</div>
