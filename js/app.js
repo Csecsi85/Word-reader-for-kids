@@ -6,9 +6,6 @@ let isPaused = true,
 	minutes = 0,
 	seconds = 0,
 	randomCard;
-/* Clone of the cardData array for contdown of elements
-	 so if there is no cards left in the clone you can clone it again */
-/* JSON.parse(JSON.stringify(cardData)) */
 
 ////////////////////////////////////////
 /* Target different parts of the page */
