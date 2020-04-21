@@ -5,10 +5,10 @@
 let isPaused = true,
 	minutes = 0,
 	seconds = 0,
-	randomCard,
-	/* Clone of the cardData array for contdown of elements
+	randomCard;
+/* Clone of the cardData array for contdown of elements
 	 so if there is no cards left in the clone you can clone it again */
-	cardTracker = JSON.parse(JSON.stringify(cardData));
+/* JSON.parse(JSON.stringify(cardData)) */
 
 ////////////////////////////////////////
 /* Target different parts of the page */
@@ -64,7 +64,7 @@ gameInit = (min = 3, sec = 0) => {
 		cardPicker();
 		/* If there are no cards left in the cardTracker array */
 	} else {
-		cardTracker = JSON.parse(JSON.stringify(cardData));
+		cardTracker = cardDataLanguage();
 		gameInit(userInput().time.minutes, userInput().time.seconds);
 	}
 	translate(languageHandler(userInput().language));
