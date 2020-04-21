@@ -1,18 +1,28 @@
-let playerCounter = 1;
-let playerName;
+let playerCounter = 1,
+	playerName;
 
-const createPlayerButton = document.querySelector('#create-player-button');
-const inputField = document.querySelector('#player-name-input');
+/* Targeting fields on the player form */
+const inputField = document.querySelector('#player-name-input'),
+	createPlayerButton = document.querySelector('#create-player-button');
 
+/* Event listeners for the form */
 createPlayerButton.addEventListener('click', () => {
 	if (inputField.value.length > 0) {
-		playerName = document.getElementById('player-name-input').value;
-		createPlayer(playerName);
-		document.forms['players-form'].reset();
+		if (playerCounter < 8) {
+			playerName = inputField.value;
+			createPlayer(playerName);
+			document.forms['players-form'].reset();
+		} else if (playerCounter == 8) {
+			playerName = inputField.value;
+			createPlayer(playerName);
+			document.forms['players-form'].reset();
+			inputField.disabled = true;
+			inputField.placeholder = 'Player limit reached';
+		}
 	}
 });
 
-/* inputField.addEventListener('keyup', function(event) {
+inputField.addEventListener('keyup', function(event) {
 	// Number 13 is the "Enter" key on the keyboard
 	if (event.keyCode === 13) {
 		if (inputField.value.length > 0) {
@@ -22,14 +32,15 @@ createPlayerButton.addEventListener('click', () => {
 			createPlayerButton.click();
 		}
 	}
-}); */
+});
 
+/* Create player function */
 createPlayer = (name) => {
 	document
 		.getElementById('players')
 		.insertAdjacentHTML(
 			'beforeend',
-			`<li class="player-list-item"><p class="playerName" id="player${playerCounter}"><span class="score-text"> Score: </span><span id="score${playerCounter}">0</span></p></li>`
+			`<li class="player-list-item"><p class="player-name" id="player${playerCounter}"></p> <span class="score-display" id="score${playerCounter}">0</span></li>`
 		);
 	document.getElementById(`player${playerCounter}`).insertAdjacentText('afterbegin', name);
 	playerCounter++;
