@@ -296,9 +296,9 @@ ul {
 }
 
 #score-title {
-	margin: 20px 20px 20px 0;
+	margin: 20px 0 20px 0;
 	text-align: right;
-	font-size: 2.5rem;
+	font-size: 3rem;
 	text-decoration: underline;
 }
 
@@ -311,12 +311,31 @@ ul {
 .score-display {
 	display: inline-block;
 	text-align: left;
-	margin-right: 45px;
+	/* margin-right: 50px; */
 	font-size: 2.5rem;
+	line-height: 2rem;
 }
 
 .player-name {
 	display: inline-block;
-	margin-left: 45px;
 	font-size: 2.5rem;
+}
+
+.counter-button {
+	cursor: pointer;
+}
+
+.score-content {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 110px;
+}
+
+.plus {
+	color: green;
+}
+
+.minus {
+	color: red;
 }
