@@ -8,6 +8,9 @@ const inputField = document.querySelector('#player-name-input'),
 /* Event listeners for the form */
 createPlayerButton.addEventListener('click', () => {
 	if (inputField.value.length > 0) {
+		if (inputField.value.length > 14) {
+			inputField.value = inputField.value.substring(0, 14);
+		}
 		if (playerCounter < 8) {
 			playerName = inputField.value;
 			createPlayer(playerName);
@@ -40,7 +43,7 @@ createPlayer = (name) => {
 		.getElementById('players')
 		.insertAdjacentHTML(
 			'beforeend',
-			`<li class="player-list-item"><p class="player-name" id="player${playerCounter}"></p> <span class="score-display" id="score${playerCounter}">0</span></li>`
+			`<li class="player-list-item"><p class="player-name" id="player${playerCounter}"></p><div class="score-content"><div class="counter-button minus" id="score-minus${playerCounter}"><i class="fa fa-minus-square"></i></div><span class="score-display" id="score${playerCounter}">0</span><div class="counter-button plus" id="score-plus${playerCounter}"><i class="fa fa-plus-square"></i></div></div></li>`
 		);
 	document.getElementById(`player${playerCounter}`).insertAdjacentText('afterbegin', name);
 	playerCounter++;
