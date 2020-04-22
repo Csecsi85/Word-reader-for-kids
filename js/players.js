@@ -1,4 +1,4 @@
-let playerCounter = 1,
+let playerCounter = 0,
 	playerName;
 
 /* Targeting fields on the player form */
@@ -11,11 +11,11 @@ createPlayerButton.addEventListener('click', () => {
 		if (inputField.value.length > 14) {
 			inputField.value = inputField.value.substring(0, 14);
 		}
-		if (playerCounter < 8) {
+		if (playerCounter < 7) {
 			playerName = inputField.value;
 			createPlayer(playerName);
 			document.forms['players-form'].reset();
-		} else if (playerCounter == 8) {
+		} else if (playerCounter == 7) {
 			playerName = inputField.value;
 			createPlayer(playerName);
 			document.forms['players-form'].reset();

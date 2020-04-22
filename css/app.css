@@ -16,9 +16,9 @@ p {
 
 /* fix Big mess to clean up */
 .modal-button {
-	position: absolute;
+	position: sticky;
 	top: 20px;
-	right: 20px;
+	left: 95vw;
 	display: block;
 	color: azure;
 	text-align: center;
@@ -305,7 +305,7 @@ ul {
 .display {
 	display: flex;
 	justify-content: space-around;
-	margin: 10%;
+	margin: 3% 10% 0 10%;
 }
 
 .score-display {
