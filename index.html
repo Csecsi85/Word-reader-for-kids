@@ -33,21 +33,21 @@
 					<div class="modal-box-form-timer">
 						<div>
 							<label for="time">
-								<h2 class="set-timer">Temporizador</h2>
+								<h2 class="set-timer"></h2>
 							</label>
 						</div>
 						<div>
 							<div class="sliders">
 								<div>
 									<div class="sliders-time">
-										<label class="sliders-time-minutes" for="minutes">Minutos:</label>
+										<label class="sliders-time-minutes" for="minutes"></label>
 										<output name="ageOutputName" id="ageOutputId1">3</output>
 									</div>
 										<input type="range" id="minutes" placeholder="Min" min="0" max="10" value="3" step="1" oninput="ageOutputId1.value = minutes.value">
 									</div>
 								<div>
 									<div class="sliders-time">
-										<label class="sliders-time-seconds" for="minutes">Segundos:</label>
+										<label class="sliders-time-seconds" for="minutes"></label>
 										<output name="ageOutputName" id="ageOutputId2">0</output>
 								</div>
 									<input type="range" id="seconds" placeholder="Sec" min="0" max="59" value="0" step="1" oninput="ageOutputId2.value = seconds.value">
@@ -58,15 +58,15 @@
 					
 					<div>
 						<div>
-							<label for="flags"><h2 class="flags-title">Elige idioma</h2></label>
+							<label for="flags"><h2 class="flags-title"></h2></label>
 						</div>	
 						<div class="modal-box-form-flags">
-							<div id="language">
+							<div id="language" onclick="cardDataLanguage()">
 								<label for="spain"><img class="flags" src="assets/images/flag-spain.png" alt="flag-spain"></label>
 								<input type="radio" id="spain" name="flags" value="es" checked>
 							</div>
-							<div>
-								<label for="uk"><img class="flags" src="assets/images/flag-uk.png" alt="flag-uk"></label>
+							<div onclick="cardDataLanguage()">
+								<label for="uk"><img class="flags" src="assets/images/flag-uk.png" alt="flag-uk" ></label>
 								<input type="radio" id="uk" name="flags" value="en">
 							</div>
 						</div>
@@ -74,17 +74,17 @@
 
 					<div class="modal-box-form-text">
 						<div for="show-text">
-							<h2 class="card-text-title">Mostrar texto?</h2>
+							<h2 class="card-text-title"></h2>
 						</div>
 						<div>
-							<label class="card-text-description" for="show-text">Qieres ver el texto <br> en la cajilla?</label>
+							<label class="card-text-description" for="show-text"></label>
 						</div>
 						<div>
 							<input type="checkbox" id="show-text" name="show-text" value="show-text" checked>
 						</div>
 					</div>
 
-						<div class="button" id="apply-button" onclick="cardDataLanguage()">Aplicar</div>
+						<div class="button" id="apply-button" onclick="cardDataLanguage()"></div>
 
 			</div>
 			</form>
