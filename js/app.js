@@ -55,9 +55,6 @@ gameInit = (min = 3, sec = 0) => {
 		isPaused = true;
 		timeDisplay();
 		changeActivityImg();
-		audioButton.addEventListener('click', () => {
-			new Audio(randomCard[1]).play();
-		});
 		cardPicker();
 		/* If there are no cards left in the cardTracker array */
 	} else {
@@ -98,7 +95,6 @@ cardPicker = () => {
 	} else {
 		cardText.innerHTML = '';
 	}
-
 	document.getElementById('audio').src = randomCard[1];
 	cardTracker.splice(randomNumber, 1);
 };
@@ -190,3 +186,5 @@ function modalToggle() {
 /* Start the webapp gameInit(minutes, seconds) */
 /////////////////////////////////////////////////
 gameInit(userInput().time.minutes, userInput().time.seconds);
+document.querySelector('.modal-container').classList.toggle('modal');
+modalIconToggler();
