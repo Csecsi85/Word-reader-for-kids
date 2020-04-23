@@ -3,10 +3,12 @@
 //////////////////////////////////////////////////////////////////////////////////////
 
 languageHandler = (lang) => {
+	/* Filtered string object based on selected language */
 	let language = {};
 	/* String database object */
 	const languageStrings = {
 		es : {
+			htmlLang       : 'es',
 			title          : 'Activity para niños',
 			players        : 'Jugadores',
 			score          : 'Puntos',
@@ -23,6 +25,7 @@ languageHandler = (lang) => {
 			save           : 'Guardar'
 		},
 		en : {
+			htmlLang       : 'en',
 			title          : 'Activity for kids',
 			players        : 'Players',
 			score          : 'Points',
@@ -59,6 +62,7 @@ languageHandler = (lang) => {
 
 translate = (lang) => {
 	document.title = lang.title;
+	document.documentElement.setAttribute('lang', lang.htmlLang);
 	document.querySelector('.modal-box-header').textContent = lang.settings;
 	document.querySelector('#players-title').textContent = lang.players;
 	document.querySelector('#score-title').textContent = lang.score;

@@ -21,25 +21,6 @@ const playButton = document.querySelector('.pause'),
 	modalBox = document.getElementById('modal'),
 	applyButton = document.getElementById('apply-button');
 
-////////////////////////////////////////////
-/* Get user Input from the settings modal */
-////////////////////////////////////////////
-
-const userInput = () => {
-	userSettings = {
-		time     : {
-			/* Values : number */
-			minutes : parseInt(document.getElementById('minutes').value),
-			seconds : parseInt(document.getElementById('seconds').value)
-		},
-		/* Values : es, en */
-		language : document.querySelector('input[name="flags"]:checked').value,
-		/* Values : True, False */
-		showText : document.getElementById('show-text').checked
-	};
-	return userSettings;
-};
-
 ////////////////////
 /* Initialisation */
 ////////////////////
@@ -64,9 +45,9 @@ gameInit = (min = 3, sec = 0) => {
 	translate(languageHandler(userInput().language));
 };
 
-///////////////
-/* Functions */
-///////////////
+////////////////////////
+/* All card functions */
+////////////////////////
 
 /* Alternate between button states Play/Pause */
 pauseToggle = () => {
@@ -130,6 +111,16 @@ timer = () => {
 	}, 1000);
 };
 
+/* Changing activity image */
+changeActivityImg = () => {
+	let activitySrc = [ 'assets/images/body.png', 'assets/images/draw.png', 'assets/images/speak.png' ];
+	activityImage.src = activitySrc[Math.floor(Math.random() * activitySrc.length)];
+};
+
+/////////////////////
+/* Modal functions */
+/////////////////////
+
 /* Toggles the modal icon */
 modalIconToggler = () => {
 	if (document.querySelector('.modal-button').innerHTML == '<i class="fa fa-cog"></i>') {
@@ -137,12 +128,6 @@ modalIconToggler = () => {
 	} else {
 		document.querySelector('.modal-button').innerHTML = '<i class="fa fa-cog"></i>';
 	}
-};
-
-/* Changing activity image */
-changeActivityImg = () => {
-	let activitySrc = [ 'assets/images/body.png', 'assets/images/draw.png', 'assets/images/speak.png' ];
-	activityImage.src = activitySrc[Math.floor(Math.random() * activitySrc.length)];
 };
 
 /* Closes modal when user clicks anywhere outside of the modal */
@@ -158,6 +143,22 @@ window.onkeyup = function(event) {
 		document.querySelector('.modal-container').classList.toggle('modal');
 		modalIconToggler();
 	}
+};
+
+/* Get user Input from the settings modal */
+const userInput = () => {
+	userSettings = {
+		time     : {
+			/* Values : number */
+			minutes : parseInt(document.getElementById('minutes').value),
+			seconds : parseInt(document.getElementById('seconds').value)
+		},
+		/* Values : es, en */
+		language : document.querySelector('input[name="flags"]:checked').value,
+		/* Values : True, False */
+		showText : document.getElementById('show-text').checked
+	};
+	return userSettings;
 };
 
 /////////////////////////////////////////

@@ -1,11 +1,18 @@
+//////////////////////////////////
+/* Declare all global variables */
+//////////////////////////////////
 let playerCounter = 0,
 	playerName;
 
-/* Targeting fields on the player form */
 const inputField = document.querySelector('#player-name-input'),
-	createPlayerButton = document.querySelector('#create-player-button');
+	createPlayerButton = document.querySelector('#create-player-button'),
+	startGameButton = document.querySelector('#start-game-button'),
+	resetGameButton = document.querySelector('#reset-game-button');
 
+//////////////////////////////////
 /* Event listeners for the form */
+//////////////////////////////////
+
 createPlayerButton.addEventListener('click', () => {
 	if (inputField.value.length > 0) {
 		if (inputField.value.length > 14) {
@@ -36,8 +43,11 @@ inputField.addEventListener('keyup', function(event) {
 		}
 	}
 });
+///////////////////////////////////////
+/* Player fields & buttons functions */
+///////////////////////////////////////
 
-/* Create player function */
+/* Automatically creates players on userinput */
 createPlayer = (name) => {
 	document
 		.getElementById('players')
@@ -49,6 +59,7 @@ createPlayer = (name) => {
 	playerCounter++;
 };
 
+/* After player creation and pressing start register all score buttons for players */
 registerScoreButtons = () => {
 	if (playerCounter) {
 		for (let i = 0; i < playerCounter; i++) {
@@ -68,16 +79,21 @@ registerScoreButtons = () => {
 	}
 };
 
+/* Disables all before game buttons */
 disablePlayerInput = () => {
-	document.querySelector('#start-game-button').style.display = 'none';
+	startGameButton.style.display = 'none';
 	inputField.style.display = 'none';
 	createPlayerButton.style.display = 'none';
 };
 
-document.querySelector('#start-game-button').addEventListener('click', registerScoreButtons);
+startGameButton.addEventListener('click', registerScoreButtons);
+/* Listener for audio button when game starts
+ to avoid multiple listeners for the same button during creation */
 audioButton.addEventListener('click', () => {
 	new Audio(randomCard[1]).play();
 });
-document.querySelector('#reset-game-button').addEventListener('click', () => {
+
+/* Reset button (Window reload) */
+resetGameButton.addEventListener('click', () => {
 	window.location.reload(false);
 });
