@@ -12,6 +12,7 @@ languageHandler = (lang) => {
 			score          : 'Puntos',
 			nameInputLabel : 'Nombre',
 			addButton      : 'Añadir',
+			playButton     : 'Jugar',
 			settings       : 'Ajustes',
 			timer          : 'Temporizador',
 			minutes        : 'Minutos:',
@@ -27,6 +28,7 @@ languageHandler = (lang) => {
 			score          : 'Points',
 			nameInputLabel : 'Name',
 			addButton      : 'Add',
+			playButton     : 'Play',
 			settings       : 'Settings',
 			timer          : 'Timer',
 			minutes        : 'Minutes:',
@@ -62,6 +64,7 @@ translate = (lang) => {
 	document.querySelector('#score-title').textContent = lang.score;
 	document.querySelector('#player-name-input').placeholder = lang.nameInputLabel;
 	document.querySelector('#create-player-button').textContent = lang.addButton;
+	document.querySelector('#start-game-button').textContent = lang.playButton;
 	document.querySelector('.set-timer').textContent = lang.timer;
 	document.querySelector('.sliders-time-minutes').textContent = lang.minutes;
 	document.querySelector('.sliders-time-seconds').textContent = lang.seconds;

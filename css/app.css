@@ -78,12 +78,17 @@ p {
 	background-color: chocolate;
 	color: azure;
 }
+.modal-box-body {
+	background-color: rgb(169, 252, 252);
+}
 
 .modal-box-form {
 	display: flex;
-	justify-content: center;
+	justify-content: space-evenly;
 	padding: 10px 20px;
 	background-color: rgb(169, 252, 252);
+	width: 800px;
+	margin: 0 auto;
 }
 
 .modal-box-form > div > div {
@@ -133,6 +138,7 @@ p {
 	background-color: beige;
 	border: 3px solid black;
 	border-radius: 50px;
+	display: none;
 }
 
 .card-container-text {
@@ -223,7 +229,6 @@ p {
 	color: azure;
 	font-size: 1.5rem;
 	padding-top: 20px;
-	margin: 45px 0 0 25px;
 	cursor: pointer;
 }
 
@@ -270,7 +275,6 @@ p {
 }
 
 #create-player-button {
-	margin: auto;
 	padding: 20px 0 0 0;
 }
 
@@ -338,4 +342,17 @@ ul {
 
 .minus {
 	color: red;
+}
+
+#start-game-button {
+	padding: 20px 0 0 0;
+}
+
+.player-buttons {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+#apply-button {
+	margin-top: 45px;
 }
