@@ -23,7 +23,7 @@
 <!-- fix The big mess to clean up -->
 <body>
 	<a href="#" class="modal-button btn"><i class="fa fa-cog"></i></a>
-	<div class="modal-container" id="modal">
+	<div class="modal-container modal" id="modal">
 		<div class="modal-box">
 			<div class="modal-header">
 				<h1 class="modal-box-header"></h1>
@@ -96,12 +96,17 @@
 	<div class="display">
 
 	<div class="players-container">
-		<h2 id="players-title">Players</h2>
-		<p id="score-title">Score</p>
+		<h2 id="players-title"></h2>
+		<p id="score-title"></p>
 		<ul id="players"></ul>
 		<form id="players-form">
-			<input type="text" id="player-name-input" placeholder="Enter your name">
-			<div class="button" type="submit" id="create-player-button">Create</div>
+			<input type="text" id="player-name-input" placeholder="">
+			<div class="player-buttons">
+				<div class="button" id="create-player-button"></div>
+				<div class="button" id="start-game-button"></div>
+				<div class="button" id="reset-game-button">Reset</div>
+			</div>
+
 		</form>
 	</div>
 

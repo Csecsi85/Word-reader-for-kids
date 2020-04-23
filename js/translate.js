@@ -7,26 +7,36 @@ languageHandler = (lang) => {
 	/* String database object */
 	const languageStrings = {
 		es : {
-			title        : 'Activity para niños',
-			settings     : 'Ajustes',
-			timer        : 'Temporizador',
-			minutes      : 'Minutos:',
-			seconds      : 'Segundos:',
-			language     : 'Idioma',
-			showText     : 'Mostrar texto?',
-			showTextDesc : 'Qieres ver el texto <br> en la cajilla?',
-			save         : 'Guardar'
+			title          : 'Activity para niños',
+			players        : 'Jugadores',
+			score          : 'Puntos',
+			nameInputLabel : 'Nombre',
+			addButton      : 'Añadir',
+			playButton     : 'Jugar',
+			settings       : 'Ajustes',
+			timer          : 'Temporizador',
+			minutes        : 'Minutos:',
+			seconds        : 'Segundos:',
+			language       : 'Idioma',
+			showText       : 'Mostrar texto?',
+			showTextDesc   : 'Qieres ver el texto <br> en la cajilla?',
+			save           : 'Guardar'
 		},
 		en : {
-			title        : 'Activity for kids',
-			settings     : 'Settings',
-			timer        : 'Timer',
-			minutes      : 'Minutes:',
-			seconds      : 'Seconds:',
-			language     : 'Language',
-			showText     : 'Show text?',
-			showTextDesc : 'Do you want to show <br> text on the cards?',
-			save         : 'Save'
+			title          : 'Activity for kids',
+			players        : 'Players',
+			score          : 'Points',
+			nameInputLabel : 'Name',
+			addButton      : 'Add',
+			playButton     : 'Play',
+			settings       : 'Settings',
+			timer          : 'Timer',
+			minutes        : 'Minutes:',
+			seconds        : 'Seconds:',
+			language       : 'Language',
+			showText       : 'Show text?',
+			showTextDesc   : 'Do you want to show <br> text on the cards?',
+			save           : 'Save'
 		}
 	};
 	/* Selects the language object to return */
@@ -50,6 +60,11 @@ languageHandler = (lang) => {
 translate = (lang) => {
 	document.title = lang.title;
 	document.querySelector('.modal-box-header').textContent = lang.settings;
+	document.querySelector('#players-title').textContent = lang.players;
+	document.querySelector('#score-title').textContent = lang.score;
+	document.querySelector('#player-name-input').placeholder = lang.nameInputLabel;
+	document.querySelector('#create-player-button').textContent = lang.addButton;
+	document.querySelector('#start-game-button').textContent = lang.playButton;
 	document.querySelector('.set-timer').textContent = lang.timer;
 	document.querySelector('.sliders-time-minutes').textContent = lang.minutes;
 	document.querySelector('.sliders-time-seconds').textContent = lang.seconds;

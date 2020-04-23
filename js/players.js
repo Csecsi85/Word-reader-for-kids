@@ -1,4 +1,4 @@
-let playerCounter = 1,
+let playerCounter = 0,
 	playerName;
 
 /* Targeting fields on the player form */
@@ -11,16 +11,16 @@ createPlayerButton.addEventListener('click', () => {
 		if (inputField.value.length > 14) {
 			inputField.value = inputField.value.substring(0, 14);
 		}
-		if (playerCounter < 8) {
+		if (playerCounter < 7) {
 			playerName = inputField.value;
 			createPlayer(playerName);
 			document.forms['players-form'].reset();
-		} else if (playerCounter == 8) {
+		} else if (playerCounter == 7) {
 			playerName = inputField.value;
 			createPlayer(playerName);
 			document.forms['players-form'].reset();
-			inputField.disabled = true;
-			inputField.placeholder = 'Player limit reached';
+			inputField.style.display = 'none';
+			createPlayerButton.style.display = 'none';
 		}
 	}
 });
@@ -48,3 +48,33 @@ createPlayer = (name) => {
 	document.getElementById(`player${playerCounter}`).insertAdjacentText('afterbegin', name);
 	playerCounter++;
 };
+
+registerScoreButtons = () => {
+	if (playerCounter) {
+		for (let i = 0; i < playerCounter; i++) {
+			let minusButton = document.getElementById(`score-minus${i}`);
+			let plusButton = document.getElementById(`score-plus${i}`);
+			let scoreDisplay = document.getElementById(`score${i}`);
+
+			minusButton.addEventListener('click', () => {
+				scoreDisplay.textContent -= 1;
+			});
+			plusButton.addEventListener('click', () => {
+				scoreDisplay.textContent -= -1;
+			});
+		}
+		document.querySelector('.card-container').style.display = 'block';
+		disablePlayerInput();
+	}
+};
+
+disablePlayerInput = () => {
+	document.querySelector('#start-game-button').style.display = 'none';
+	inputField.style.display = 'none';
+	createPlayerButton.style.display = 'none';
+};
+
+document.querySelector('#start-game-button').addEventListener('click', registerScoreButtons);
+document.querySelector('#reset-game-button').addEventListener('click', () => {
+	window.location.reload(false);
+});
