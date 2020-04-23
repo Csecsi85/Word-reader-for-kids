@@ -75,6 +75,9 @@ disablePlayerInput = () => {
 };
 
 document.querySelector('#start-game-button').addEventListener('click', registerScoreButtons);
+audioButton.addEventListener('click', () => {
+	new Audio(randomCard[1]).play();
+});
 document.querySelector('#reset-game-button').addEventListener('click', () => {
 	window.location.reload(false);
 });
