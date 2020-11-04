@@ -226,7 +226,7 @@ p {
 	border: 2px solid white;
 	border-radius: 20px;
 	color: azure;
-	font-size: 1.5rem;
+	font-size: 1.2rem;
 	padding-top: 20px;
 	cursor: pointer;
 }
@@ -265,7 +265,7 @@ p {
 }
 
 #players-title {
-	font-size: 5rem;
+	font-size: 4rem;
 }
 
 #players {
