@@ -68,11 +68,11 @@ cardPicker = () => {
 	randomCard = [ cardTracker[randomNumber].word, cardTracker[randomNumber].sound ];
 	if (userInput().showText) {
 		cardText.innerHTML = randomCard[0];
-		if (randomCard[0].length > 12) {
-			cardText.style.fontSize = '5rem';
-		} else {
-			cardText.style.fontSize = '6rem';
-		}
+		// if (randomCard[0].length > 12 && window.screen.width > '1023px') {
+		// 	cardText.style.fontSize = '5rem';
+		// } else {
+		// 	cardText.style.fontSize = '6rem';
+		// }
 	} else {
 		cardText.innerHTML = '';
 	}
@@ -125,8 +125,10 @@ changeActivityImg = () => {
 modalIconToggler = () => {
 	if (document.querySelector('.modal-button').innerHTML == '<i class="fa fa-cog"></i>') {
 		document.querySelector('.modal-button').innerHTML = '<i class="fa fa-times"></i>';
+		document.querySelector('.modal-button').classList.toggle('red')
 	} else {
 		document.querySelector('.modal-button').innerHTML = '<i class="fa fa-cog"></i>';
+		document.querySelector('.modal-button').classList.toggle('red');
 	}
 };
 
