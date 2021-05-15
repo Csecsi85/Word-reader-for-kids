@@ -12,10 +12,18 @@ I want to play Activity Board game with my daughter who is not able to read well
 
 - Simple frontend UI without distractions(The word, listen, start clock, next button, picture of activity type)
 - An array of words
+- Settings module
+- Multi Language Support
+- Scorecard
 - Countdown timer
 - An array that links the voice files to a play button
 - An array of possible activity types (preferably photos that describe the activity) (Act, describe or draw)
 - A next button to pick a new generated word with an activity
+
+## Technologies
+- HTML
+- CSS
+- JavaScript
 
 ## Any collaboration collaboration is very much appreciated so I can play this game with my daugthers during the confinement.
 
