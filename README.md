@@ -1,4 +1,4 @@
-# Word reader for kids in Spanish
+# Word reader for kids
 
 ## Brief description:
 
